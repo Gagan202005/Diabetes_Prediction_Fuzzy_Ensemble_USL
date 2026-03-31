@@ -34,8 +34,10 @@ The project is modularized into three sequential Jupyter Notebooks to mimic a pr
 
 1. **`01_Data_Preprocessing.ipynb`**:
    - Loads the raw data (`diabetes_prediction_dataset.csv`).
-   - Handles missing values, encodes categorical variables, and scales numerical features using `StandardScaler`.
-   - Solves class imbalance using **SMOTE** (Synthetic Minority Over-sampling Technique).
+   - Handles missing values, and introduces **Feature Engineering** (e.g., `health_risk_score`).
+   - Uses **IQR (Interquartile Range) capping** to handle medical outliers in numeric features cleanly without losing critical edge cases.
+   - Converts categorical variables using **One-Hot Encoding** to eliminate numerical biases.
+   - Scales features with `StandardScaler` and solves class imbalance using **SMOTE** (Synthetic Minority Over-sampling Technique).
    - Exports the cleaned, separated data to `processed_data.pkl`.
 
 2. **`02_Base_Model_Training.ipynb`**:
